@@ -5,7 +5,7 @@ Bubble Sort,
 Insertion Sort, 
 Selection Sort, and 
 Quick Sort. 
-These algorithms will be used to sort arrays of integers, and you are required to provide Big O notations for the time complexity of these sorting algorithms in various cases.
+These algorithms will be used to sort arrays of integers, and we are required to provide Big O notations for the time complexity of these sorting algorithms in various cases.
 
 ### Bubble Sort for Arrays
 
