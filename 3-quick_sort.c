@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "sort.h"
 /**
  * partition - function that implements lomuto partition scheme
  * @array: array
@@ -7,44 +7,34 @@
  * @size: size of array
  * Return: index of smaller el
  */
+void swap(int* a, int* b)
+{
+    int t = *a;
+    *a = *b;
+    *b = t;
+}
 int partition(int arr[], int low, int high)
 {
-   
-    int pivot = arr[high];
+	int pivot = arr[high];
+	int i = (low - 1);
 
-  
-    int i = (low - 1);
+    for (int j = low; j <= high - 1; j++) {
 
-    int j;
-    for (j = low; j <= high - 1; j++) {
-
-        
-        if (arr[j] < pivot) {
-
-            
-            i++;
-            
-          
+	    if (arr[j] < pivot)
+{
+	    i++;
             swap(&arr[i], &arr[j]);
-            
-            
-            printf("Swapped %d and %d: ", arr[i], arr[j]);
-            for (int k = low; k <= high; k++) {
-                printf("%d ", arr[k]);
-            }
-            printf("\n");
         }
     }
-    
-    
     swap(&arr[i + 1], &arr[high]);
-    
-   
-    printf("Swapped %d and %d: ", arr[i + 1], arr[high]);
-    for (int k = low; k <= high; k++) {
-        printf("%d ", arr[k]);
-    }
-    printf("\n");
-    
     return (i + 1);
+
+    }
+void quick_Sort(int arr[], int low, int high)
+{
+    if (low < high) {
+	     int pi = partition(arr, low, high);
+	      quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
 }
