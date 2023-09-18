@@ -15,10 +15,13 @@ void swap(int* a, int* b)
 }
 int partition(int arr[], int low, int high)
 {
+        int pivot, i, j;
+
 	int pivot = arr[high];
 	int i = (low - 1);
 
-    for (int j = low; j <= high - 1; j++) {
+    for (int j = low; j <= high - 1; j++)
+    {
 
 	    if (arr[j] < pivot)
 {
@@ -34,7 +37,7 @@ void quick_Sort(int arr[], int low, int high)
 {
     if (low < high) {
 	     int pi = partition(arr, low, high);
-	      quickSort(arr, low, pi - 1);
-        quickSort(arr, pi + 1, high);
+	      quick_Sort(arr, low, pi - 1);
+        quick_Sort(arr, pi + 1, high);
     }
 }
