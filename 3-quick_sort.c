@@ -1,14 +1,12 @@
 #include <stdio.h>
-
-
-void swap(int* a, int* b)
-{
-    int t = *a;
-    *a = *b;
-    *b = t;
-}
-
-
+/**
+ * partition - function that implements lomuto partition scheme
+ * @array: array
+ * @low: first el
+ * @high: last el
+ * @size: size of array
+ * Return: index of smaller el
+ */
 int partition(int arr[], int low, int high)
 {
    
