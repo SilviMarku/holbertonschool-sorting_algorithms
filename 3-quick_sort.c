@@ -20,17 +20,20 @@ void swap(int *a, int *b) {
  * Return: Index of the pivot
  */
 int partition(int array[], int low, int high, size_t size) {
-    int pivot = array[high];
-    int i = (low - 1);
+    int pivot, i, j; // Zhvendosni deklaratat e variablave këtu
 
-    for (int j = low; j < high; j++) {
+    pivot = array[high];
+    i = (low - 1);
+
+    for (j = low; j < high; j++) { // Përdorni i dhe j pasi janë tashmë të deklaruar
         if (array[j] <= pivot) {
             i++;
             swap(&array[i], &array[j]);
+            print_array(array, size); // Printoni array pas çdo ndryshimi
         }
     }
     swap(&array[i + 1], &array[high]);
-    print_array(array, size);
+    print_array(array, size); // Printoni array pas ndryshimit të fundit
     return (i + 1);
 }
 
