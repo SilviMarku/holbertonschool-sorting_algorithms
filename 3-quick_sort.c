@@ -7,6 +7,9 @@
  * @size: size of array
  * Return: index of smaller el
  */
+
+
+
 int partition(int *array, int low, int high, size_t size)
 {
 	int pivot, i, j, tmp;
